@@ -222,7 +222,7 @@ export function NoteFormDialog({ open, onOpenChange, note }: NoteFormDialogProps
                             </p>
                         </div>
                     </div>
-                    <DialogFooter>
+                    <DialogFooter className="gap-2">
                         <Button
                             type="button"
                             variant="outline"

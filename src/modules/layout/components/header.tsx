@@ -1,4 +1,4 @@
-import { Plus, LayoutGrid, List, Wifi, WifiOff, RefreshCw, Search, X } from 'lucide-react';
+import { Plus, LayoutGrid, List, Wifi, WifiOff, RefreshCw, Search, X, Notebook } from 'lucide-react';
 import { Button } from '@/src/primitives/ui/button';
 import { useNotesStore } from '@/src/modules/utils/use-note-store';
 import { cn } from '@/src/lib/utils';
@@ -77,12 +77,9 @@ export function Header({ onCreateNote, searchQuery, onSearchChange, resultsCount
     return (
         <header className="border-b bg-background sticky top-0 z-10">
             <div className="flex items-center justify-between gap-3 px-4 sm:px-6 py-4">
-                {/* Left Section */}
                 <div className="flex items-center gap-2 sm:gap-4 min-w-0">
                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-purple-500 shadow-glow">
-                        <svg className="h-5 w-5 text-primary-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M12 3v18M3 12h18" />
-                        </svg>
+                        <Notebook className="h-5 w-5 text-primary-foreground" />
                     </div>
                     <h1 className="text-xl sm:text-2xl font-bold hidden sm:block">Notes</h1>
                     <div className="hidden lg:flex items-center gap-2">
@@ -105,7 +102,6 @@ export function Header({ onCreateNote, searchQuery, onSearchChange, resultsCount
                     </div>
                 </div>
 
-                {/* Center Section - Search Bar */}
                 <div className="flex-1 max-w-md mx-2 sm:mx-4">
                     <div
                         className={cn(
@@ -146,7 +142,6 @@ export function Header({ onCreateNote, searchQuery, onSearchChange, resultsCount
                     </div>
                 </div>
 
-                {/* Right Section */}
                 <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
                     {pendingCount > 0 && isOnline && (
                         <Button

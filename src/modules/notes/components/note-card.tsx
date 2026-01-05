@@ -98,7 +98,7 @@ export function NoteCard({ note, onEdit, onDelete, viewMode }: NoteCardProps) {
 
             <div className="mt-4 flex items-center justify-between border-t border-border pt-4">
                 <p className="text-xs text-muted-foreground/70">
-                    Edited {timeAgo}
+                    Created {formatDistanceToNow(note.created_at)} • Edited {timeAgo}
                 </p>
                 <div className="flex items-center gap-1 opacity-0 transition-all group-hover:opacity-100">
                     <Button
