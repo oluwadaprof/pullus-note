@@ -1,8 +1,9 @@
 import { Note } from '@/src/modules/utils/type';
 import { NoteCard } from './note-card';
 import { useNotesStore } from '@/src/modules/utils/use-note-store';
-import { FileText, NotebookPen } from 'lucide-react';
+import { FileText, NotebookPen, Plus } from 'lucide-react';
 import { Button } from '@/src/primitives/ui/button';
+import { FloatingNoteButton } from '@/src/modules/layout/components/floating-note.button';
 
 interface NotesListProps {
     notes: Note[];
@@ -23,14 +24,16 @@ export function NotesList({ notes, onEdit, onDelete, onCreateNote }: NotesListPr
                     <p className="text-muted-foreground">
                         Create your first note to get started
                     </p>
+                    <Button
+                        size='sm'
+                        onClick={onCreateNote}
+                        className="rounded-xl hidden md:flex gap-1 shadow-lg z-30  w-auto mt-4 text-sm px-2"
+                    >
+                        <Plus className="h-6 w-6" /> <span >New Note</span>
+                    </Button>
                 </div>
-                <Button
-                    onClick={onCreateNote}
-                    className="sm:hidden fixed left-4 bottom-6 h-14 w-14 rounded-full shadow-lg z-30"
-                    size="icon"
-                >
-                    <NotebookPen className="h-6 w-6" />
-                </Button>
+                <FloatingNoteButton onCreateNote={onCreateNote} />
+
             </>
         );
     }
