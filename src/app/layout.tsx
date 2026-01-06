@@ -1,11 +1,14 @@
-// app/layout.tsx
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/src/primitives/theme-provider'
 import { Providers } from '@/src/app/providers'
 
-const inter = Inter({ subsets: ['latin'] })
+const jakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-jakarta'
+})
 
 export const metadata: Metadata = {
   title: 'Notes App - Offline First PWA',
@@ -20,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className='dark' suppressHydrationWarning>
-      <body className={`theme-transition ${inter.className}`}>
+      <body className={`theme-transition ${jakartaSans.className}`}>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'

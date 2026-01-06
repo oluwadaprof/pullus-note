@@ -7,6 +7,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { useState } from 'react';
 import { useToast } from '@/src/primitives/ui/use-toast';
 import { ThemeSwitcher } from '@/src/primitives/theme-switcher';
+import { MobileMenu } from '@/src/modules/layout/components/mobile-menu';
 
 interface HeaderProps {
     onCreateNote: () => void;
@@ -185,14 +186,15 @@ export function Header({ onCreateNote, searchQuery, onSearchChange, resultsCount
                         <ThemeSwitcher />
                     </div>
 
-                    <Button className='rounded-xl h-9' onClick={onCreateNote}>
+                    <Button className="hidden sm:flex rounded-xl h-9" onClick={onCreateNote}>
                         <Plus className="h-4 w-4 sm:mr-2" />
                         <span className="hidden sm:inline">New Note</span>
                     </Button>
+
+                    <MobileMenu onCreateNote={onCreateNote} />
                 </div>
             </div>
 
-            {/* Mobile Status Bar */}
             <div className="flex lg:hidden items-center gap-2 px-4 pb-3">
                 {isOnline ? (
                     <div className="flex items-center rounded-full bg-green-600/10 px-2.5 py-1 gap-1.5 text-xs text-green-600">

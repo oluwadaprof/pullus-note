@@ -178,14 +178,14 @@ export function NoteFormDialog({ open, onOpenChange, note }: NoteFormDialogProps
         >
             <DialogContent className="sm:max-w-[600px]">
                 <form onSubmit={handleSubmit}>
-                    <DialogHeader>
+                    <DialogHeader className="text-left">
                         <div className="flex items-center gap-3">
                             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
                                 <FileText className="h-5 w-5 text-primary" />
                             </div>
                             <div>
-                                <DialogTitle>{note ? 'Edit Note' : 'Create Note'}</DialogTitle>
-                                <DialogDescription>
+                                <DialogTitle className="text-left">{note ? 'Edit Note' : 'Create Note'}</DialogTitle>
+                                <DialogDescription className="text-left">
                                     {note ? 'Update your note details below' : 'Fill in the details to create a new note'}
                                 </DialogDescription>
                             </div>

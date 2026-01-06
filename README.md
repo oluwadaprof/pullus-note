@@ -102,9 +102,9 @@ npm install
 Create a `.env.local` file with:
 
 ```env
-NEXT_PUBLIC_SUPABASE_URL=https://scwaxiuduzyziuyjfwda.supabase.co/rest/v1
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key_here
-NEXT_PUBLIC_USER_ID=adeekotobiloba8@gmail.com
+NEXT_PUBLIC_SUPABASE_URL=https://test.supabase.co/rest/v1
+NEXT_PUBLIC_SUPABASE_ANON_KEY=test-key-123
+NEXT_PUBLIC_USER_ID=test-user-456
 ```
 
 ## Development

@@ -14,13 +14,10 @@ export default function Home() {
   const [selectedNote, setSelectedNote] = useState<Note | null>(null);
   const [noteToDelete, setNoteToDelete] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
-
   const { data: notes, isLoading } = useNotes();
 
-  // Filter notes based on search query
   const filteredNotes = useMemo(() => {
     if (!notes || !searchQuery.trim()) return notes || [];
-
     const query = searchQuery.toLowerCase().trim();
     return notes.filter((note) => {
       const titleMatch = note.title.toLowerCase().includes(query);
@@ -67,6 +64,7 @@ export default function Home() {
               notes={filteredNotes}
               onEdit={handleEditNote}
               onDelete={handleDeleteNote}
+              onCreateNote={handleCreateNote}
             />
           )}
         </main>
